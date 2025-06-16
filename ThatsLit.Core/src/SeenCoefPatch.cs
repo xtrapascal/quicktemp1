@@ -29,7 +29,7 @@ namespace ThatsLit
 
         [PatchPostfix]
         [HarmonyAfter("me.sol.sain")]
-        public static void PatchPostfix(EnemyInfo __instance, BifacialTransform BotTransform, BifacialTransform enemy, float personalLastSeenTime, Vector3 personalLastSeenPos, ref float __result)
+        public static void PatchPostfix(EnemyInfo __instance, ref float __result)
         {
             // Don't use GoalEnemy here because it only change when engaging new enemy (it'll stay indifinitely if not engaged with new enemy)
             // Also they could search without having visual?
