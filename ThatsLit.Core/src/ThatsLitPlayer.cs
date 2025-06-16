@@ -931,6 +931,7 @@ namespace ThatsLit
 
         private void OnGUI()
         {
+            if (GUI.skin == null) return; // Add this line
             if (Player?.IsYourPlayer != true)
                 return;
 

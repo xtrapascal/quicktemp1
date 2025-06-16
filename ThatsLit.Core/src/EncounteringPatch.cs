@@ -160,7 +160,10 @@ namespace ThatsLit.Patches.Vision
         {
             if (!ThatsLitPlugin.EnabledMod.Value || !ThatsLitPlugin.EnabledEncountering.Value)
                 return;
-            if (!__state.triggered || __instance.Owner?.Memory?.GoalEnemy != __instance)
+
+            // The original check is good, but let's make it safer.
+            // Check __instance and GoalEnemy for null before comparing them.
+            if (!__state.triggered || __instance?.Owner?.Memory?.GoalEnemy == null || __instance.Owner.Memory.GoalEnemy != __instance)
                 return; // Not triggering the patch OR the bot is engaging others
 
             var aim = __instance.Owner?.AimingManager.CurrentAiming;
