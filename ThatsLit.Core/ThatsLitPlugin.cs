@@ -329,11 +329,11 @@ namespace ThatsLit
         {
             new SeenCoefPatch().Enable();
             new EncounteringPatch().Enable();
-            //new ExtraVisibleDistancePatch().Enable();
+            new ExtraVisibleDistancePatch().Enable();
             new InitiateShotMonitor().Enable();
             new BlindFirePatch().Enable();
-            //if (SAINLoaded)
-            //    new SAINNoBushOverride().Enable();
+            if (SAINLoaded)
+                new SAINNoBushOverride().Enable();
         }
 
         private void Update()
